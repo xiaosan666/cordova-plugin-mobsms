@@ -25,7 +25,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
-declare const mobsms;
 
 @Component({
   selector: 'page-home',
@@ -42,17 +41,17 @@ export class HomePage {
 
   // 发送验证码前需要初始化操作
   init() {
-    debugger;
-    if (mobsms) {
-      // 申请key： http://dashboard.mob.com/#!/sms/dashboard
-      let mobConfig = {
-        APPKEY: '29d025c53ffd1',
-        APPSECRET: '9d67b36379852a2a5cd3980ca95e44c5'
-      };
-      this.cordovaMobSms = mobsms.init({MobConfig: mobConfig});
-    }else{
+    if (!window['mobsms']) {
       alert('请在真机调试或检查插件是否安装正确');
+      return;
     }
+    debugger;
+    // 申请key： http://dashboard.mob.com/#!/sms/dashboard
+    let mobConfig = {
+      APPKEY: '29d025c53ffd1',
+      APPSECRET: '9d67b36379852a2a5cd3980ca95e44c5'
+    };
+    this.cordovaMobSms = window['mobsms'].init({MobConfig: mobConfig});
   }
 
   // 发送验证码
@@ -75,5 +74,6 @@ export class HomePage {
     }, this.phone, this.verifyCode);
   }
 }
+
 
 ```
