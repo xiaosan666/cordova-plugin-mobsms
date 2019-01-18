@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-mobsms",
+  "version": "1.0.0",
+  "description": "一款免费发送短信的cordova插件",
+  "cordova": {
+    "id": "cordova-plugin-mobsms",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanxiaojun617/cordova-plugin-mobsms.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanxiaojun617/com.kit.cordova.amaplocation/issues"
+  },
+  "homepage": "https://github.com/yanxiaojun617/cordova-plugin-mobsms#readme"
+}
