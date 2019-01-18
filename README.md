@@ -34,12 +34,13 @@ declare const mobsms;
 export class HomePage {
   cordovaMobSms;
 
-  verifyCode = '';
-  phone = '18688498342';
+  phone = ''; // 输入手机号
+  verifyCode = ''; // 接受到的验证码
 
   constructor(public navCtrl: NavController) {
   }
 
+  // 发送验证码前需要初始化操作
   init() {
     debugger;
     if (mobsms) {
